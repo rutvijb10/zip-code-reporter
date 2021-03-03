@@ -17,7 +17,6 @@ class ZIPCodeExtractor :
             aggregateData = pd.merge(aggregateData, groupedZipCodes, on=['ZipCode'], how='outer')\
                 .set_index('ZipCode').sum(axis=1)\
                 .to_frame(name='Count').astype(int).reset_index()
-            aggregateData
         return aggregateData
     
     # Method to compute aggregate data for a set of addresses (dataframe)
